@@ -1,0 +1,85 @@
+# Production overlay. Required secrets have no development fallback.
+# Usage:
+#   cp .env.prod.example .env.prod
+#   # Fill SECRET_KEY, BOOTSTRAP_ADMIN_PASSWORD, POSTGRES_PASSWORD and
+#   # PUBLIC_HOST in .env.prod before starting.
+#   docker compose -f docker-compose.prod.yml --env-file .env.prod up --build -d
+name: intelligent-production-scheduling-prod
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-scheduler}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a strong POSTGRES_PASSWORD in .env.prod}
+      POSTGRES_DB: ${POSTGRES_DB:-scheduler}
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-scheduler} -d ${POSTGRES_DB:-scheduler}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+    networks: [private]
+
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: ips-api:prod
+    environment:
+      ENVIRONMENT: production
+      DEBUG: "false"
+      SECRET_KEY: ${SECRET_KEY:?Set a random SECRET_KEY in .env.prod}
+      BOOTSTRAP_ADMIN_USERNAME: ${BOOTSTRAP_ADMIN_USERNAME:-admin}
+      BOOTSTRAP_ADMIN_PASSWORD: ${BOOTSTRAP_ADMIN_PASSWORD:?Set a unique BOOTSTRAP_ADMIN_PASSWORD in .env.prod}
+      BOOTSTRAP_ADMIN_EMAIL: ${BOOTSTRAP_ADMIN_EMAIL:-admin@localhost}
+      DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-scheduler}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB:-scheduler}
+      CORS_ORIGINS: https://${PUBLIC_HOST:?Set PUBLIC_HOST in .env.prod}
+      AI_ENABLED: ${AI_ENABLED:-false}
+      AI_DEFAULT_PROVIDER: ${AI_DEFAULT_PROVIDER:-mock}
+      SOLVER_WORKERS: ${SOLVER_WORKERS:-2}
+      MAX_CONCURRENT_OPTIMIZATIONS: ${MAX_CONCURRENT_OPTIMIZATIONS:-2}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      LOG_JSON: "true"
+    volumes:
+      - api-uploads:/app/data/uploads
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/api/ready"]
+      interval: 15s
+      timeout: 5s
+      retries: 8
+      start_period: 60s
+    restart: unless-stopped
+    networks: [private]
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: ips-web:prod
+    ports:
+      - "${WEB_PORT:-80}:80"
+    depends_on:
+      api:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    restart: unless-stopped
+    networks: [private]
+
+volumes:
+  pg-data:
+  api-uploads:
+
+networks:
+  private:
+    driver: bridge

@@ -1,0 +1,73 @@
+[project]
+name = "intelligent-production-scheduling-backend"
+authors = [{ name = "Sanjay Mouraly", email = "sanjaymouraly@users.noreply.github.com" }]
+version = "1.0.0"
+description = "Constraint-aware production scheduling platform — FastAPI + OR-Tools CP-SAT"
+requires-python = ">=3.11"
+readme = "../README.md"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["app"]
+exclude = ["alembic/versions"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "RUF"]
+ignore = [
+  "E501",    # long lines are handled by the formatter
+  "B008",    # FastAPI Depends() in defaults is the documented pattern
+  "RUF012",  # ClassVar annotations on ORM models are noisy
+  "SIM108",  # ternary is not always clearer
+  "SIM102",  # nested ifs are often clearer in scheduling logic
+  "SIM103",  # explicit returns document intent
+  "UP038",   # isinstance tuples are still the most readable form
+  "RUF002",  # typographic characters in prose are intentional
+  "RUF005",  # list concatenation reads better in this codebase
+  "B007",    # unused loop variables document the iteration order
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101", "E402"]
+"alembic/*" = ["E402"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+disallow_untyped_defs = false
+check_untyped_defs = true
+no_implicit_optional = true
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["ortools.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+minversion = "7.4"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+addopts = "-ra --strict-markers --strict-config"
+markers = [
+  "slow: long running solver or benchmark tests",
+  "integration: tests that exercise the HTTP API",
+  "hypothesis: property based tests",
+]
+filterwarnings = [
+  "ignore::DeprecationWarning:pydantic.*",
+]
+
+[project.urls]
+Homepage = "https://github.com/sanjaymouraly/constraint-aware-production-scheduling-ai"
+Repository = "https://github.com/sanjaymouraly/constraint-aware-production-scheduling-ai"
+Issues = "https://github.com/sanjaymouraly/constraint-aware-production-scheduling-ai/issues"

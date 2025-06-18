@@ -1,0 +1,4 @@
+Alembic migrations for the scheduling platform.
+
+    alembic upgrade head            # apply all migrations
+    alembic revision --autogenerate -m "message"

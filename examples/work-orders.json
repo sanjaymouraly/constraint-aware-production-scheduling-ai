@@ -1,0 +1,32 @@
+{
+  "work_orders": [
+    {
+      "code": "WO-EXAMPLE-JSON-1001",
+      "customer_code": "CUST-NORTHWIND",
+      "product_sku": "PMP-100",
+      "quantity": 24,
+      "priority": 4,
+      "release_at": "2026-11-01T06:00:00Z",
+      "due_at": "2026-11-06T16:00:00Z",
+      "hard_deadline": null,
+      "penalty_per_hour": 100,
+      "is_urgent": false,
+      "status": "released",
+      "notes": "Normal production order"
+    },
+    {
+      "code": "WO-EXAMPLE-JSON-1002",
+      "customer_code": "CUST-VECTRA",
+      "product_sku": "VLV-200",
+      "quantity": 12,
+      "priority": 5,
+      "release_at": "2026-11-01T06:00:00Z",
+      "due_at": "2026-11-04T16:00:00Z",
+      "hard_deadline": "2026-11-04T12:00:00Z",
+      "penalty_per_hour": 250,
+      "is_urgent": true,
+      "status": "released",
+      "notes": "Urgent order with a hard deadline"
+    }
+  ]
+}

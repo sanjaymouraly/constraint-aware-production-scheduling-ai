@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-steel-100 text-steel-900;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'tnum';
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-steel-300;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+}
+
+@layer components {
+  .card {
+    @apply rounded-xl border border-steel-200 bg-white shadow-card;
+  }
+
+  .card-header {
+    @apply flex flex-wrap items-center justify-between gap-3 border-b border-steel-200 px-5 py-4;
+  }
+
+  .card-title {
+    @apply text-base font-semibold tracking-tight text-steel-900;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost,
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium
+           transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+           focus-visible:outline-accent-500 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-accent-600 text-white hover:bg-accent-700;
+  }
+
+  .btn-secondary {
+    @apply border border-steel-300 bg-white text-steel-700 hover:bg-steel-50;
+  }
+
+  .btn-ghost {
+    @apply text-steel-600 hover:bg-steel-100;
+  }
+
+  .btn-danger {
+    @apply bg-danger-500 text-white hover:bg-danger-600;
+  }
+
+  .btn-sm {
+    @apply px-2.5 py-1.5 text-xs;
+  }
+
+  .input {
+    @apply w-full rounded-lg border border-steel-300 bg-white px-3 py-2 text-sm text-steel-900
+           placeholder:text-steel-400 focus:border-accent-500 focus:outline-none focus:ring-2
+           focus:ring-accent-500/30 disabled:bg-steel-50;
+  }
+
+  .label {
+    @apply mb-1.5 block text-xs font-semibold uppercase tracking-wide text-steel-500;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+
+  .table-base {
+    @apply w-full border-collapse text-left text-sm;
+  }
+
+  .table-base thead th {
+    @apply whitespace-nowrap border-b border-steel-200 bg-steel-50 px-4 py-2.5 text-xs font-semibold
+           uppercase tracking-wide text-steel-500;
+  }
+
+  .table-base tbody td {
+    @apply border-b border-steel-100 px-4 py-2.5 align-middle text-steel-700;
+  }
+
+  .table-base tbody tr:hover {
+    @apply bg-accent-50/40;
+  }
+
+  .stat-value {
+    @apply font-mono text-2xl font-semibold tracking-tight text-steel-900;
+  }
+
+  .stat-label {
+    @apply text-xs font-medium uppercase tracking-wide text-steel-500;
+  }
+}
+
+@layer utilities {
+  .scroll-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+}

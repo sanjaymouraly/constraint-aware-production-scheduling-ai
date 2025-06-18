@@ -1,0 +1,70 @@
+"""ORM model package — import all models so Alembic autogenerate sees them."""
+
+from app.db import Base
+from app.models.ai import AIConversation, AIMessage, AIProvider, AISettings
+from app.models.catalog import (
+    Customer,
+    Material,
+    MaterialReceipt,
+    MaterialRequirement,
+    Product,
+    Routing,
+    RoutingOperation,
+    WorkOrder,
+)
+from app.models.resources import (
+    Calendar,
+    CalendarBreak,
+    CalendarException,
+    CalendarShift,
+    Machine,
+    MachineCalendarException,
+    MachineDowntime,
+    MachineSetup,
+    Operator,
+    OperatorAbsence,
+)
+from app.models.scheduling import (
+    AuditLog,
+    Job,
+    OperationalEvent,
+    OptimizationRun,
+    Scenario,
+    Schedule,
+    ScheduleOperation,
+    User,
+)
+
+__all__ = [
+    "AIConversation",
+    "AIMessage",
+    "AIProvider",
+    "AISettings",
+    "AuditLog",
+    "Base",
+    "Calendar",
+    "CalendarBreak",
+    "CalendarException",
+    "CalendarShift",
+    "Customer",
+    "Job",
+    "Machine",
+    "MachineCalendarException",
+    "MachineDowntime",
+    "MachineSetup",
+    "Material",
+    "MaterialReceipt",
+    "MaterialRequirement",
+    "OperationalEvent",
+    "Operator",
+    "OperatorAbsence",
+    "OptimizationRun",
+    "Product",
+    "Routing",
+    "RoutingOperation",
+    "Scenario",
+    "Schedule",
+    "ScheduleOperation",
+    "User",
+    "WorkOrder",
+]

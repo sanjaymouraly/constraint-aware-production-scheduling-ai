@@ -1,0 +1,34 @@
+# --- Core web stack ---
+fastapi==0.143.5
+uvicorn[standard]==0.54.0
+python-multipart==0.0.32
+pydantic==2.14.1
+pydantic-settings==2.16.0
+
+# --- Persistence ---
+# SQLAlchemy 2.0.36 cannot be used on Python 3.14: its `make_union_type`
+# helper still calls the removed `Union[(X, Y)]` tuple form.  2.0.55 is the
+# first release line that works on 3.12, 3.13 and 3.14 alike.
+SQLAlchemy==2.0.55
+psycopg[binary]==3.3.6
+alembic==1.16.5
+
+# --- Optimization ---
+ortools==9.15.6755
+# OR-Tools 9.15 requires protobuf >=6.33.1; 6.33.5 includes the security fix.
+protobuf==6.33.5
+
+# --- HTTP / integrations ---
+httpx==0.28.1
+
+# --- Security ---
+cryptography==50.0.2
+PyJWT==2.15.1
+argon2-cffi==23.1.0
+
+# --- Background jobs ---
+APScheduler==3.11.0
+
+# --- Observability ---
+structlog==24.4.0
+prometheus-client==0.21.1

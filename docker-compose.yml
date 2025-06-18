@@ -1,0 +1,92 @@
+# ---------------------------------------------------------------------------
+# Intelligent Production Scheduling AI - local / self-hosted stack
+#
+#   docker compose up --build
+#   docker compose exec api python -m app.cli reset --scale medium
+#
+# The web app is served on http://localhost:5173 and the API on
+# http://localhost:8000.  The optional PostgreSQL service is started with
+# `docker compose --profile postgres up`.
+# ---------------------------------------------------------------------------
+name: intelligent-production-scheduling
+
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: ips-api:latest
+    environment:
+      ENVIRONMENT: ${ENVIRONMENT:-development}
+      DEBUG: ${DEBUG:-false}
+      # Inside the compose network the database is a named volume, not a
+      # file on the host, so SQLite is used by default and PostgreSQL is
+      # available through the `postgres` profile.
+      # `API_DATABASE_URL` is deliberately a *different* variable from the
+      # host's `DATABASE_URL`: the host value is a path relative to the
+      # repository root and would point outside the container.
+      API_DATABASE_URL: ${API_DATABASE_URL:-sqlite:////app/data/app.db}
+      DATABASE_URL: ${API_DATABASE_URL:-sqlite:////app/data/app.db}
+      DATA_DIR: /app/data
+      UPLOAD_DIR: /app/data/uploads
+      SECRET_KEY: ${SECRET_KEY:-dev-insecure-change-me-in-production}
+      BOOTSTRAP_ADMIN_USERNAME: ${BOOTSTRAP_ADMIN_USERNAME:-admin}
+      BOOTSTRAP_ADMIN_PASSWORD: ${BOOTSTRAP_ADMIN_PASSWORD:-admin}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:5173,http://127.0.0.1:5173}
+      SOLVER_RANDOM_SEED: ${SOLVER_RANDOM_SEED:-42}
+      MAX_CONCURRENT_OPTIMIZATIONS: ${MAX_CONCURRENT_OPTIMIZATIONS:-2}
+      AI_ENABLED: ${AI_ENABLED:-true}
+      AI_DEFAULT_PROVIDER: ${AI_DEFAULT_PROVIDER:-mock}
+      LOG_LEVEL: ${LOG_LEVEL:-INFO}
+      LOG_JSON: ${LOG_JSON:-false}
+    volumes:
+      - api-data:/app/data
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/api/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 40s
+    restart: unless-stopped
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: ips-web:latest
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "5173:80"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
+
+  postgres:
+    profiles: ["postgres"]
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-scheduler}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-scheduler}
+      POSTGRES_DB: ${POSTGRES_DB:-scheduler}
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-scheduler}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  api-data:
+  pg-data:

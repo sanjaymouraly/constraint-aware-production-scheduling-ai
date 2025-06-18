@@ -1,0 +1,18 @@
+-r requirements.txt
+
+# --- Testing ---
+# Starlette 1.8 uses the hardened httpx2 TestClient transport.
+httpx2==2.13.1
+pytest==9.1.1
+pytest-asyncio==1.4.0
+pytest-cov==7.1.0
+hypothesis==6.131.1
+factory-boy==3.3.1
+
+# --- Quality ---
+ruff==0.8.6
+mypy==1.14.1
+# Bandit 1.8.3 crashes on Python 3.14 (it reads the removed `ast.Constant.s`);
+# 1.9.4 works on 3.11 - 3.14.
+bandit==1.9.4
+pip-audit==2.7.3

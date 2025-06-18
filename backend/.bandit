@@ -1,0 +1,17 @@
+# Bandit configuration for the Intelligent Production Scheduling AI backend.
+#
+# The three findings that this configuration does *not* suppress are annotated
+# in the source with an explicit `# nosec` comment and a justification:
+#
+#   * `B105` in app/config.py - the development default credentials.  They are
+#     rejected by `Settings._require_production_secrets` in a production
+#     environment, so they can never be used in a deployed system.
+#   * `B311` in app/seed/demo_factory.py - a seeded PRNG for *synthetic demo
+#     data*.  It is not used for anything security relevant.
+#
+# Everything with a severity of "medium" or higher fails the build.
+[bandit]
+exclude_dirs:
+  - tests
+skips:
+  - B101

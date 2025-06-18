@@ -1,0 +1,2267 @@
+{
+  "generated_at": "2026-10-19T15:26:00.459537+00:00",
+  "scale": "large",
+  "time_limit_seconds": 900.0,
+  "deterministic_time_limit": 30.0,
+  "workers": 1,
+  "planning_reference": "2024-05-13T00:00:00+00:00",
+  "instance": {
+    "operations": 280,
+    "machines": 22,
+    "operators": 20,
+    "horizon_start": "2024-05-10T00:00:00+00:00",
+    "horizon_end": "2024-05-26T12:00:00+00:00"
+  },
+  "baseline": {
+    "engine": "fcfs",
+    "status": "FEASIBLE",
+    "valid": true,
+    "runtime_ms": 369.7,
+    "metrics": {
+      "on_time_delivery_pct": 71.67,
+      "orders_scheduled": 60,
+      "orders_on_time": 43,
+      "orders_late": 17,
+      "tardiness_minutes": 82450.0,
+      "tardiness_hours": 1374.17,
+      "weighted_tardiness": 204342.0,
+      "penalty_cost": 85142.5,
+      "makespan_minutes": 13796,
+      "makespan_hours": 229.93,
+      "plan_start": "2024-05-13T06:00:00+00:00",
+      "plan_end": "2024-05-22T19:56:00+00:00",
+      "operations_scheduled": 280,
+      "operations_total": 280,
+      "throughput_orders": 60.0,
+      "setup_minutes": 1890.0,
+      "setup_hours": 31.5,
+      "machine_busy_minutes": 22040.0,
+      "machine_available_minutes": 258360.0,
+      "machine_utilisation_pct": 8.53,
+      "overtime_minutes": 0.0,
+      "overtime_hours": 0.0,
+      "labour_cost": 15567.3,
+      "machine_cost": 27710.67,
+      "operating_cost": 43277.97,
+      "displaced_operations": 0,
+      "moved_operations": 0,
+      "schedule_disruption_pct": 0.0,
+      "machines": [
+        {
+          "machine_id": 8,
+          "machine_code": "ASSY-01",
+          "machine_name": "Assembly Line A",
+          "machine_type": "ASSY",
+          "busy_minutes": 2649.0,
+          "setup_minutes": 270.0,
+          "available_minutes": 10440.0,
+          "utilisation_pct": 25.37,
+          "operations": 21
+        },
+        {
+          "machine_id": 19,
+          "machine_code": "ASSY-01-C2",
+          "machine_name": "Assembly Line A (cell 2)",
+          "machine_type": "ASSY",
+          "busy_minutes": 1805.0,
+          "setup_minutes": 195.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 17.09,
+          "operations": 16
+        },
+        {
+          "machine_id": 1,
+          "machine_code": "CNC-01",
+          "machine_name": "CNC Mill 1",
+          "machine_type": "CNC",
+          "busy_minutes": 1667.0,
+          "setup_minutes": 285.0,
+          "available_minutes": 10320.0,
+          "utilisation_pct": 16.15,
+          "operations": 19
+        },
+        {
+          "machine_id": 9,
+          "machine_code": "ASSY-02",
+          "machine_name": "Assembly Line B",
+          "machine_type": "ASSY",
+          "busy_minutes": 1403.0,
+          "setup_minutes": 165.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 13.29,
+          "operations": 14
+        },
+        {
+          "machine_id": 5,
+          "machine_code": "WELD-01",
+          "machine_name": "Weld Cell 1",
+          "machine_type": "WELD",
+          "busy_minutes": 1363.0,
+          "setup_minutes": 90.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 12.91,
+          "operations": 18
+        },
+        {
+          "machine_id": 12,
+          "machine_code": "CNC-01-C2",
+          "machine_name": "CNC Mill 1 (cell 2)",
+          "machine_type": "CNC",
+          "busy_minutes": 1337.0,
+          "setup_minutes": 105.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 12.66,
+          "operations": 17
+        },
+        {
+          "machine_id": 16,
+          "machine_code": "WELD-01-C2",
+          "machine_name": "Weld Cell 1 (cell 2)",
+          "machine_type": "WELD",
+          "busy_minutes": 1032.0,
+          "setup_minutes": 90.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 9.77,
+          "operations": 15
+        },
+        {
+          "machine_id": 2,
+          "machine_code": "CNC-02",
+          "machine_name": "CNC Mill 2",
+          "machine_type": "CNC",
+          "busy_minutes": 1012.0,
+          "setup_minutes": 135.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 9.58,
+          "operations": 13
+        },
+        {
+          "machine_id": 11,
+          "machine_code": "INSP-01",
+          "machine_name": "CMM Inspection",
+          "machine_type": "INSP",
+          "busy_minutes": 973.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 9.21,
+          "operations": 29
+        },
+        {
+          "machine_id": 4,
+          "machine_code": "PRESS-01",
+          "machine_name": "Hydraulic Press 1",
+          "machine_type": "PRESS",
+          "busy_minutes": 870.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 8.24,
+          "operations": 11
+        },
+        {
+          "machine_id": 15,
+          "machine_code": "PRESS-01-C2",
+          "machine_name": "Hydraulic Press 1 (cell 2)",
+          "machine_type": "PRESS",
+          "busy_minutes": 834.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 7.9,
+          "operations": 9
+        },
+        {
+          "machine_id": 13,
+          "machine_code": "CNC-02-C2",
+          "machine_name": "CNC Mill 2 (cell 2)",
+          "machine_type": "CNC",
+          "busy_minutes": 801.0,
+          "setup_minutes": 225.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 7.59,
+          "operations": 11
+        },
+        {
+          "machine_id": 20,
+          "machine_code": "ASSY-02-C2",
+          "machine_name": "Assembly Line B (cell 2)",
+          "machine_type": "ASSY",
+          "busy_minutes": 732.0,
+          "setup_minutes": 90.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 6.93,
+          "operations": 9
+        },
+        {
+          "machine_id": 7,
+          "machine_code": "FURNACE-01",
+          "machine_name": "Heat Treat Furnace",
+          "machine_type": "FURNACE",
+          "busy_minutes": 1620.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 23760.0,
+          "utilisation_pct": 6.82,
+          "operations": 10
+        },
+        {
+          "machine_id": 3,
+          "machine_code": "CNC-03",
+          "machine_name": "CNC Lathe 3",
+          "machine_type": "CNC",
+          "busy_minutes": 698.0,
+          "setup_minutes": 60.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 6.61,
+          "operations": 11
+        },
+        {
+          "machine_id": 10,
+          "machine_code": "PACK-01",
+          "machine_name": "Packaging Line 1",
+          "machine_type": "PACK",
+          "busy_minutes": 629.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 5.96,
+          "operations": 17
+        },
+        {
+          "machine_id": 14,
+          "machine_code": "CNC-03-C2",
+          "machine_name": "CNC Lathe 3 (cell 2)",
+          "machine_type": "CNC",
+          "busy_minutes": 625.0,
+          "setup_minutes": 60.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 5.92,
+          "operations": 9
+        },
+        {
+          "machine_id": 18,
+          "machine_code": "FURNACE-01-C2",
+          "machine_name": "Heat Treat Furnace (cell 2)",
+          "machine_type": "FURNACE",
+          "busy_minutes": 1206.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 23760.0,
+          "utilisation_pct": 5.08,
+          "operations": 10
+        },
+        {
+          "machine_id": 22,
+          "machine_code": "INSP-01-C2",
+          "machine_name": "CMM Inspection (cell 2)",
+          "machine_type": "INSP",
+          "busy_minutes": 269.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 2.55,
+          "operations": 11
+        },
+        {
+          "machine_id": 6,
+          "machine_code": "WELD-02",
+          "machine_name": "Weld Cell 2",
+          "machine_type": "WELD",
+          "busy_minutes": 243.0,
+          "setup_minutes": 90.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 2.3,
+          "operations": 4
+        },
+        {
+          "machine_id": 17,
+          "machine_code": "WELD-02-C2",
+          "machine_name": "Weld Cell 2 (cell 2)",
+          "machine_type": "WELD",
+          "busy_minutes": 167.0,
+          "setup_minutes": 30.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 1.58,
+          "operations": 3
+        },
+        {
+          "machine_id": 21,
+          "machine_code": "PACK-01-C2",
+          "machine_name": "Packaging Line 1 (cell 2)",
+          "machine_type": "PACK",
+          "busy_minutes": 105.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 0.99,
+          "operations": 3
+        }
+      ],
+      "operators": [
+        {
+          "operator_id": 1,
+          "operator_code": "OP-01",
+          "operator_name": "Ana Ferreira",
+          "assigned_minutes": 1221.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 17
+        },
+        {
+          "operator_id": 11,
+          "operator_code": "OP-01-C2",
+          "operator_name": "Ana Ferreira (shift 2)",
+          "assigned_minutes": 908.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 15
+        },
+        {
+          "operator_id": 2,
+          "operator_code": "OP-02",
+          "operator_name": "Ben Kaur",
+          "assigned_minutes": 1386.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 14
+        },
+        {
+          "operator_id": 12,
+          "operator_code": "OP-02-C2",
+          "operator_name": "Ben Kaur (shift 2)",
+          "assigned_minutes": 1157.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 14
+        },
+        {
+          "operator_id": 3,
+          "operator_code": "OP-03",
+          "operator_name": "Cara Osei",
+          "assigned_minutes": 1363.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 18
+        },
+        {
+          "operator_id": 13,
+          "operator_code": "OP-03-C2",
+          "operator_name": "Cara Osei (shift 2)",
+          "assigned_minutes": 1032.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 15
+        },
+        {
+          "operator_id": 4,
+          "operator_code": "OP-04",
+          "operator_name": "Dan Petrov",
+          "assigned_minutes": 1073.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 15
+        },
+        {
+          "operator_id": 14,
+          "operator_code": "OP-04-C2",
+          "operator_name": "Dan Petrov (shift 2)",
+          "assigned_minutes": 995.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 11
+        },
+        {
+          "operator_id": 5,
+          "operator_code": "OP-05",
+          "operator_name": "Eve Nowak",
+          "assigned_minutes": 2383.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 18
+        },
+        {
+          "operator_id": 15,
+          "operator_code": "OP-05-C2",
+          "operator_name": "Eve Nowak (shift 2)",
+          "assigned_minutes": 2346.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 21
+        },
+        {
+          "operator_id": 6,
+          "operator_code": "OP-06",
+          "operator_name": "Finn Okafor",
+          "assigned_minutes": 1585.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 28
+        },
+        {
+          "operator_id": 16,
+          "operator_code": "OP-06-C2",
+          "operator_name": "Finn Okafor (shift 2)",
+          "assigned_minutes": 1009.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 13
+        },
+        {
+          "operator_id": 7,
+          "operator_code": "OP-07",
+          "operator_name": "Gita Rao",
+          "assigned_minutes": 973.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 29
+        },
+        {
+          "operator_id": 17,
+          "operator_code": "OP-07-C2",
+          "operator_name": "Gita Rao (shift 2)",
+          "assigned_minutes": 269.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 11
+        },
+        {
+          "operator_id": 8,
+          "operator_code": "OP-08",
+          "operator_name": "Hugo Marek",
+          "assigned_minutes": 1620.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 10
+        },
+        {
+          "operator_id": 18,
+          "operator_code": "OP-08-C2",
+          "operator_name": "Hugo Marek (shift 2)",
+          "assigned_minutes": 1206.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 10
+        },
+        {
+          "operator_id": 9,
+          "operator_code": "OP-09",
+          "operator_name": "Ines Costa",
+          "assigned_minutes": 46.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 1
+        },
+        {
+          "operator_id": 19,
+          "operator_code": "OP-09-C2",
+          "operator_name": "Ines Costa (shift 2)",
+          "assigned_minutes": 0.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 0
+        },
+        {
+          "operator_id": 10,
+          "operator_code": "OP-10",
+          "operator_name": "Jonas Berg",
+          "assigned_minutes": 901.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 11
+        },
+        {
+          "operator_id": 20,
+          "operator_code": "OP-10-C2",
+          "operator_name": "Jonas Berg (shift 2)",
+          "assigned_minutes": 567.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 9
+        }
+      ],
+      "orders": [
+        {
+          "work_order_id": 34,
+          "work_order_code": "WO-240513-0034",
+          "priority": 5,
+          "due_at": "2024-05-15T08:00:00+00:00",
+          "completion": "2024-05-13T11:04:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 40,
+          "work_order_code": "WO-240513-0040",
+          "priority": 5,
+          "due_at": "2024-05-17T08:00:00+00:00",
+          "completion": "2024-05-13T12:40:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 10,
+          "work_order_code": "WO-240513-0010",
+          "priority": 5,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-13T09:52:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 28,
+          "work_order_code": "WO-240513-0028",
+          "priority": 5,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-13T17:04:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 4,
+          "work_order_code": "WO-240513-0004",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T13:28:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 11,
+          "work_order_code": "WO-240513-0011",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T13:50:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 18,
+          "work_order_code": "WO-240513-0018",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T13:45:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 25,
+          "work_order_code": "WO-240513-0025",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T11:04:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 32,
+          "work_order_code": "WO-240513-0032",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T16:11:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 39,
+          "work_order_code": "WO-240513-0039",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T15:32:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 46,
+          "work_order_code": "WO-240513-0046",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T17:03:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 53,
+          "work_order_code": "WO-240513-0053",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T18:27:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 60,
+          "work_order_code": "WO-240513-0060",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T15:58:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 52,
+          "work_order_code": "WO-240513-0052",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T18:14:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 16,
+          "work_order_code": "WO-240513-0016",
+          "priority": 5,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-13T21:04:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 58,
+          "work_order_code": "WO-240513-0058",
+          "priority": 5,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-13T19:58:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 22,
+          "work_order_code": "WO-240513-0022",
+          "priority": 5,
+          "due_at": "2024-05-20T12:00:00+00:00",
+          "completion": "2024-05-13T20:22:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 8,
+          "work_order_code": "WO-240513-0008",
+          "priority": 4,
+          "due_at": "2024-05-15T00:00:00+00:00",
+          "completion": "2024-05-15T18:45:00+00:00",
+          "tardiness_minutes": 1125.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 38,
+          "work_order_code": "WO-240513-0038",
+          "priority": 4,
+          "due_at": "2024-05-15T08:00:00+00:00",
+          "completion": "2024-05-13T20:19:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 20,
+          "work_order_code": "WO-240513-0020",
+          "priority": 4,
+          "due_at": "2024-05-15T12:00:00+00:00",
+          "completion": "2024-05-14T06:35:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 36,
+          "work_order_code": "WO-240513-0036",
+          "priority": 4,
+          "due_at": "2024-05-16T12:00:00+00:00",
+          "completion": "2024-05-14T06:35:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 56,
+          "work_order_code": "WO-240513-0056",
+          "priority": 4,
+          "due_at": "2024-05-16T12:00:00+00:00",
+          "completion": "2024-05-14T14:51:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 6,
+          "work_order_code": "WO-240513-0006",
+          "priority": 4,
+          "due_at": "2024-05-16T12:00:00+00:00",
+          "completion": "2024-05-15T11:45:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 54,
+          "work_order_code": "WO-240513-0054",
+          "priority": 4,
+          "due_at": "2024-05-17T08:00:00+00:00",
+          "completion": "2024-05-14T06:25:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 26,
+          "work_order_code": "WO-240513-0026",
+          "priority": 4,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-17T18:45:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 24,
+          "work_order_code": "WO-240513-0024",
+          "priority": 4,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-17T11:01:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 30,
+          "work_order_code": "WO-240513-0030",
+          "priority": 4,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-17T11:01:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 48,
+          "work_order_code": "WO-240513-0048",
+          "priority": 4,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-17T11:23:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 50,
+          "work_order_code": "WO-240513-0050",
+          "priority": 4,
+          "due_at": "2024-05-20T12:00:00+00:00",
+          "completion": "2024-05-17T13:50:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 2,
+          "work_order_code": "WO-240513-0002",
+          "priority": 4,
+          "due_at": "2024-05-22T00:00:00+00:00",
+          "completion": "2024-05-17T15:06:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 14,
+          "work_order_code": "WO-240513-0014",
+          "priority": 4,
+          "due_at": "2024-05-22T12:00:00+00:00",
+          "completion": "2024-05-17T18:34:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 12,
+          "work_order_code": "WO-240513-0012",
+          "priority": 4,
+          "due_at": "2024-05-24T00:00:00+00:00",
+          "completion": "2024-05-17T11:23:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 44,
+          "work_order_code": "WO-240513-0044",
+          "priority": 4,
+          "due_at": "2024-05-24T00:00:00+00:00",
+          "completion": "2024-05-17T16:04:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 42,
+          "work_order_code": "WO-240513-0042",
+          "priority": 4,
+          "due_at": "2024-05-24T12:00:00+00:00",
+          "completion": "2024-05-17T12:17:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 23,
+          "work_order_code": "WO-240513-0023",
+          "priority": 3,
+          "due_at": "2024-05-15T08:00:00+00:00",
+          "completion": "2024-05-17T17:21:00+00:00",
+          "tardiness_minutes": 3441.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 59,
+          "work_order_code": "WO-240513-0059",
+          "priority": 3,
+          "due_at": "2024-05-15T12:00:00+00:00",
+          "completion": "2024-05-17T21:07:00+00:00",
+          "tardiness_minutes": 3427.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 55,
+          "work_order_code": "WO-240513-0055",
+          "priority": 3,
+          "due_at": "2024-05-15T12:00:00+00:00",
+          "completion": "2024-05-13T17:58:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 1,
+          "work_order_code": "WO-240513-0001",
+          "priority": 3,
+          "due_at": "2024-05-16T00:00:00+00:00",
+          "completion": "2024-05-16T09:50:00+00:00",
+          "tardiness_minutes": 590.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 37,
+          "work_order_code": "WO-240513-0037",
+          "priority": 3,
+          "due_at": "2024-05-16T00:00:00+00:00",
+          "completion": "2024-05-16T15:04:00+00:00",
+          "tardiness_minutes": 904.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 35,
+          "work_order_code": "WO-240513-0035",
+          "priority": 3,
+          "due_at": "2024-05-16T00:00:00+00:00",
+          "completion": "2024-05-20T06:35:00+00:00",
+          "tardiness_minutes": 6155.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 41,
+          "work_order_code": "WO-240513-0041",
+          "priority": 3,
+          "due_at": "2024-05-16T08:00:00+00:00",
+          "completion": "2024-05-20T09:06:00+00:00",
+          "tardiness_minutes": 5826.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 5,
+          "work_order_code": "WO-240513-0005",
+          "priority": 3,
+          "due_at": "2024-05-16T08:00:00+00:00",
+          "completion": "2024-05-20T09:06:00+00:00",
+          "tardiness_minutes": 5826.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 29,
+          "work_order_code": "WO-240513-0029",
+          "priority": 3,
+          "due_at": "2024-05-17T00:00:00+00:00",
+          "completion": "2024-05-22T12:50:00+00:00",
+          "tardiness_minutes": 7970.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 13,
+          "work_order_code": "WO-240513-0013",
+          "priority": 3,
+          "due_at": "2024-05-18T08:00:00+00:00",
+          "completion": "2024-05-16T09:10:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 49,
+          "work_order_code": "WO-240513-0049",
+          "priority": 3,
+          "due_at": "2024-05-18T12:00:00+00:00",
+          "completion": "2024-05-16T13:28:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 47,
+          "work_order_code": "WO-240513-0047",
+          "priority": 3,
+          "due_at": "2024-05-20T08:00:00+00:00",
+          "completion": "2024-05-22T10:53:00+00:00",
+          "tardiness_minutes": 3053.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 31,
+          "work_order_code": "WO-240513-0031",
+          "priority": 3,
+          "due_at": "2024-05-20T12:00:00+00:00",
+          "completion": "2024-05-16T16:40:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 19,
+          "work_order_code": "WO-240513-0019",
+          "priority": 3,
+          "due_at": "2024-05-22T08:00:00+00:00",
+          "completion": "2024-05-16T12:12:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 43,
+          "work_order_code": "WO-240513-0043",
+          "priority": 3,
+          "due_at": "2024-05-22T12:00:00+00:00",
+          "completion": "2024-05-16T18:20:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 7,
+          "work_order_code": "WO-240513-0007",
+          "priority": 3,
+          "due_at": "2024-05-22T12:00:00+00:00",
+          "completion": "2024-05-16T19:48:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 17,
+          "work_order_code": "WO-240513-0017",
+          "priority": 3,
+          "due_at": "2024-05-24T08:00:00+00:00",
+          "completion": "2024-05-22T11:52:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 9,
+          "work_order_code": "WO-240513-0009",
+          "priority": 2,
+          "due_at": "2024-05-15T08:00:00+00:00",
+          "completion": "2024-05-22T10:17:00+00:00",
+          "tardiness_minutes": 10217.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 27,
+          "work_order_code": "WO-240513-0027",
+          "priority": 2,
+          "due_at": "2024-05-16T08:00:00+00:00",
+          "completion": "2024-05-22T15:25:00+00:00",
+          "tardiness_minutes": 9085.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 51,
+          "work_order_code": "WO-240513-0051",
+          "priority": 2,
+          "due_at": "2024-05-17T00:00:00+00:00",
+          "completion": "2024-05-22T13:36:00+00:00",
+          "tardiness_minutes": 8016.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 21,
+          "work_order_code": "WO-240513-0021",
+          "priority": 2,
+          "due_at": "2024-05-17T12:00:00+00:00",
+          "completion": "2024-05-14T06:43:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 33,
+          "work_order_code": "WO-240513-0033",
+          "priority": 2,
+          "due_at": "2024-05-18T12:00:00+00:00",
+          "completion": "2024-05-22T13:16:00+00:00",
+          "tardiness_minutes": 5836.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 3,
+          "work_order_code": "WO-240513-0003",
+          "priority": 2,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-22T16:53:00+00:00",
+          "tardiness_minutes": 5333.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 45,
+          "work_order_code": "WO-240513-0045",
+          "priority": 2,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-22T14:10:00+00:00",
+          "tardiness_minutes": 5170.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 15,
+          "work_order_code": "WO-240513-0015",
+          "priority": 2,
+          "due_at": "2024-05-22T12:00:00+00:00",
+          "completion": "2024-05-22T19:56:00+00:00",
+          "tardiness_minutes": 476.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 57,
+          "work_order_code": "WO-240513-0057",
+          "priority": 2,
+          "due_at": "2024-05-24T12:00:00+00:00",
+          "completion": "2024-05-22T15:30:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        }
+      ],
+      "bottleneck_machine": {
+        "machine_id": 8,
+        "machine_code": "ASSY-01",
+        "machine_name": "Assembly Line A",
+        "machine_type": "ASSY",
+        "busy_minutes": 2649.0,
+        "setup_minutes": 270.0,
+        "available_minutes": 10440.0,
+        "utilisation_pct": 25.37,
+        "operations": 21
+      },
+      "solver_runtime_ms": 369.7
+    }
+  },
+  "optimised": {
+    "engine": "cpsat",
+    "status": "FEASIBLE",
+    "valid": true,
+    "objective_value": 176157500.0,
+    "best_bound": 23184670.0,
+    "runtime_ms": 266443.4,
+    "metrics": {
+      "on_time_delivery_pct": 75.0,
+      "orders_scheduled": 60,
+      "orders_on_time": 45,
+      "orders_late": 15,
+      "tardiness_minutes": 70025.0,
+      "tardiness_hours": 1167.08,
+      "weighted_tardiness": 175964.0,
+      "penalty_cost": 73318.33,
+      "makespan_minutes": 14670,
+      "makespan_hours": 244.5,
+      "plan_start": "2024-05-13T06:00:00+00:00",
+      "plan_end": "2024-05-23T10:30:00+00:00",
+      "operations_scheduled": 280,
+      "operations_total": 280,
+      "throughput_orders": 60.0,
+      "setup_minutes": 2475.0,
+      "setup_hours": 41.25,
+      "machine_busy_minutes": 22040.0,
+      "machine_available_minutes": 258360.0,
+      "machine_utilisation_pct": 8.53,
+      "overtime_minutes": 0.0,
+      "overtime_hours": 0.0,
+      "labour_cost": 15560.47,
+      "machine_cost": 27710.67,
+      "operating_cost": 43271.13,
+      "displaced_operations": 0,
+      "moved_operations": 0,
+      "schedule_disruption_pct": 0.0,
+      "machines": [
+        {
+          "machine_id": 8,
+          "machine_code": "ASSY-01",
+          "machine_name": "Assembly Line A",
+          "machine_type": "ASSY",
+          "busy_minutes": 2385.0,
+          "setup_minutes": 270.0,
+          "available_minutes": 10440.0,
+          "utilisation_pct": 22.84,
+          "operations": 21
+        },
+        {
+          "machine_id": 19,
+          "machine_code": "ASSY-01-C2",
+          "machine_name": "Assembly Line A (cell 2)",
+          "machine_type": "ASSY",
+          "busy_minutes": 1663.0,
+          "setup_minutes": 255.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 15.75,
+          "operations": 14
+        },
+        {
+          "machine_id": 9,
+          "machine_code": "ASSY-02",
+          "machine_name": "Assembly Line B",
+          "machine_type": "ASSY",
+          "busy_minutes": 1635.0,
+          "setup_minutes": 270.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 15.48,
+          "operations": 15
+        },
+        {
+          "machine_id": 1,
+          "machine_code": "CNC-01",
+          "machine_name": "CNC Mill 1",
+          "machine_type": "CNC",
+          "busy_minutes": 1577.0,
+          "setup_minutes": 330.0,
+          "available_minutes": 10320.0,
+          "utilisation_pct": 15.28,
+          "operations": 19
+        },
+        {
+          "machine_id": 5,
+          "machine_code": "WELD-01",
+          "machine_name": "Weld Cell 1",
+          "machine_type": "WELD",
+          "busy_minutes": 1175.0,
+          "setup_minutes": 90.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 11.13,
+          "operations": 15
+        },
+        {
+          "machine_id": 12,
+          "machine_code": "CNC-01-C2",
+          "machine_name": "CNC Mill 1 (cell 2)",
+          "machine_type": "CNC",
+          "busy_minutes": 1160.0,
+          "setup_minutes": 150.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 10.98,
+          "operations": 15
+        },
+        {
+          "machine_id": 2,
+          "machine_code": "CNC-02",
+          "machine_name": "CNC Mill 2",
+          "machine_type": "CNC",
+          "busy_minutes": 1102.0,
+          "setup_minutes": 195.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 10.44,
+          "operations": 13
+        },
+        {
+          "machine_id": 16,
+          "machine_code": "WELD-01-C2",
+          "machine_name": "Weld Cell 1 (cell 2)",
+          "machine_type": "WELD",
+          "busy_minutes": 1010.0,
+          "setup_minutes": 150.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 9.56,
+          "operations": 15
+        },
+        {
+          "machine_id": 13,
+          "machine_code": "CNC-02-C2",
+          "machine_name": "CNC Mill 2 (cell 2)",
+          "machine_type": "CNC",
+          "busy_minutes": 978.0,
+          "setup_minutes": 270.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 9.26,
+          "operations": 13
+        },
+        {
+          "machine_id": 15,
+          "machine_code": "PRESS-01-C2",
+          "machine_name": "Hydraulic Press 1 (cell 2)",
+          "machine_type": "PRESS",
+          "busy_minutes": 933.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 8.84,
+          "operations": 11
+        },
+        {
+          "machine_id": 20,
+          "machine_code": "ASSY-02-C2",
+          "machine_name": "Assembly Line B (cell 2)",
+          "machine_type": "ASSY",
+          "busy_minutes": 906.0,
+          "setup_minutes": 285.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 8.58,
+          "operations": 10
+        },
+        {
+          "machine_id": 11,
+          "machine_code": "INSP-01",
+          "machine_name": "CMM Inspection",
+          "machine_type": "INSP",
+          "busy_minutes": 893.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 8.46,
+          "operations": 27
+        },
+        {
+          "machine_id": 7,
+          "machine_code": "FURNACE-01",
+          "machine_name": "Heat Treat Furnace",
+          "machine_type": "FURNACE",
+          "busy_minutes": 1737.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 23760.0,
+          "utilisation_pct": 7.31,
+          "operations": 11
+        },
+        {
+          "machine_id": 4,
+          "machine_code": "PRESS-01",
+          "machine_name": "Hydraulic Press 1",
+          "machine_type": "PRESS",
+          "busy_minutes": 771.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 7.3,
+          "operations": 9
+        },
+        {
+          "machine_id": 14,
+          "machine_code": "CNC-03-C2",
+          "machine_name": "CNC Lathe 3 (cell 2)",
+          "machine_type": "CNC",
+          "busy_minutes": 698.0,
+          "setup_minutes": 30.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 6.61,
+          "operations": 11
+        },
+        {
+          "machine_id": 3,
+          "machine_code": "CNC-03",
+          "machine_name": "CNC Lathe 3",
+          "machine_type": "CNC",
+          "busy_minutes": 625.0,
+          "setup_minutes": 60.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 5.92,
+          "operations": 9
+        },
+        {
+          "machine_id": 10,
+          "machine_code": "PACK-01",
+          "machine_name": "Packaging Line 1",
+          "machine_type": "PACK",
+          "busy_minutes": 609.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 5.77,
+          "operations": 16
+        },
+        {
+          "machine_id": 18,
+          "machine_code": "FURNACE-01-C2",
+          "machine_name": "Heat Treat Furnace (cell 2)",
+          "machine_type": "FURNACE",
+          "busy_minutes": 1089.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 23760.0,
+          "utilisation_pct": 4.58,
+          "operations": 9
+        },
+        {
+          "machine_id": 17,
+          "machine_code": "WELD-02-C2",
+          "machine_name": "Weld Cell 2 (cell 2)",
+          "machine_type": "WELD",
+          "busy_minutes": 377.0,
+          "setup_minutes": 30.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 3.57,
+          "operations": 6
+        },
+        {
+          "machine_id": 22,
+          "machine_code": "INSP-01-C2",
+          "machine_name": "CMM Inspection (cell 2)",
+          "machine_type": "INSP",
+          "busy_minutes": 349.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 3.3,
+          "operations": 13
+        },
+        {
+          "machine_id": 6,
+          "machine_code": "WELD-02",
+          "machine_name": "Weld Cell 2",
+          "machine_type": "WELD",
+          "busy_minutes": 243.0,
+          "setup_minutes": 90.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 2.3,
+          "operations": 4
+        },
+        {
+          "machine_id": 21,
+          "machine_code": "PACK-01-C2",
+          "machine_name": "Packaging Line 1 (cell 2)",
+          "machine_type": "PACK",
+          "busy_minutes": 125.0,
+          "setup_minutes": 0.0,
+          "available_minutes": 10560.0,
+          "utilisation_pct": 1.18,
+          "operations": 4
+        }
+      ],
+      "operators": [
+        {
+          "operator_id": 1,
+          "operator_code": "OP-01",
+          "operator_name": "Ana Ferreira",
+          "assigned_minutes": 1138.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 16
+        },
+        {
+          "operator_id": 11,
+          "operator_code": "OP-01-C2",
+          "operator_name": "Ana Ferreira (shift 2)",
+          "assigned_minutes": 908.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 15
+        },
+        {
+          "operator_id": 2,
+          "operator_code": "OP-02",
+          "operator_name": "Ben Kaur",
+          "assigned_minutes": 1306.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 14
+        },
+        {
+          "operator_id": 12,
+          "operator_code": "OP-02-C2",
+          "operator_name": "Ben Kaur (shift 2)",
+          "assigned_minutes": 1166.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 14
+        },
+        {
+          "operator_id": 3,
+          "operator_code": "OP-03",
+          "operator_name": "Cara Osei",
+          "assigned_minutes": 1229.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 16
+        },
+        {
+          "operator_id": 13,
+          "operator_code": "OP-03-C2",
+          "operator_name": "Cara Osei (shift 2)",
+          "assigned_minutes": 1032.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 15
+        },
+        {
+          "operator_id": 4,
+          "operator_code": "OP-04",
+          "operator_name": "Dan Petrov",
+          "assigned_minutes": 924.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 14
+        },
+        {
+          "operator_id": 14,
+          "operator_code": "OP-04-C2",
+          "operator_name": "Dan Petrov (shift 2)",
+          "assigned_minutes": 744.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 9
+        },
+        {
+          "operator_id": 5,
+          "operator_code": "OP-05",
+          "operator_name": "Eve Nowak",
+          "assigned_minutes": 2365.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 19
+        },
+        {
+          "operator_id": 15,
+          "operator_code": "OP-05-C2",
+          "operator_name": "Eve Nowak (shift 2)",
+          "assigned_minutes": 2060.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 19
+        },
+        {
+          "operator_id": 6,
+          "operator_code": "OP-06",
+          "operator_name": "Finn Okafor",
+          "assigned_minutes": 1713.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 27
+        },
+        {
+          "operator_id": 16,
+          "operator_code": "OP-06-C2",
+          "operator_name": "Finn Okafor (shift 2)",
+          "assigned_minutes": 1130.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 13
+        },
+        {
+          "operator_id": 7,
+          "operator_code": "OP-07",
+          "operator_name": "Gita Rao",
+          "assigned_minutes": 863.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 26
+        },
+        {
+          "operator_id": 17,
+          "operator_code": "OP-07-C2",
+          "operator_name": "Gita Rao (shift 2)",
+          "assigned_minutes": 289.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 12
+        },
+        {
+          "operator_id": 8,
+          "operator_code": "OP-08",
+          "operator_name": "Hugo Marek",
+          "assigned_minutes": 1792.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 13
+        },
+        {
+          "operator_id": 18,
+          "operator_code": "OP-08-C2",
+          "operator_name": "Hugo Marek (shift 2)",
+          "assigned_minutes": 1089.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 9
+        },
+        {
+          "operator_id": 9,
+          "operator_code": "OP-09",
+          "operator_name": "Ines Costa",
+          "assigned_minutes": 357.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 4
+        },
+        {
+          "operator_id": 19,
+          "operator_code": "OP-09-C2",
+          "operator_name": "Ines Costa (shift 2)",
+          "assigned_minutes": 223.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 2
+        },
+        {
+          "operator_id": 10,
+          "operator_code": "OP-10",
+          "operator_name": "Jonas Berg",
+          "assigned_minutes": 1145.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 14
+        },
+        {
+          "operator_id": 20,
+          "operator_code": "OP-10-C2",
+          "operator_name": "Jonas Berg (shift 2)",
+          "assigned_minutes": 567.0,
+          "regular_capacity_minutes": 5657.1,
+          "overtime_minutes": 0.0,
+          "operations": 9
+        }
+      ],
+      "orders": [
+        {
+          "work_order_id": 4,
+          "work_order_code": "WO-240513-0004",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T13:28:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 10,
+          "work_order_code": "WO-240513-0010",
+          "priority": 5,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-14T07:34:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 13,
+          "work_order_code": "WO-240513-0013",
+          "priority": 3,
+          "due_at": "2024-05-18T08:00:00+00:00",
+          "completion": "2024-05-15T09:49:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 25,
+          "work_order_code": "WO-240513-0025",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-14T10:32:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 30,
+          "work_order_code": "WO-240513-0030",
+          "priority": 4,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-17T11:02:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 34,
+          "work_order_code": "WO-240513-0034",
+          "priority": 5,
+          "due_at": "2024-05-15T08:00:00+00:00",
+          "completion": "2024-05-13T11:04:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 46,
+          "work_order_code": "WO-240513-0046",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-17T16:50:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 18,
+          "work_order_code": "WO-240513-0018",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-17T19:19:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 52,
+          "work_order_code": "WO-240513-0052",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-13T18:14:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 58,
+          "work_order_code": "WO-240513-0058",
+          "priority": 5,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-13T19:58:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 1,
+          "work_order_code": "WO-240513-0001",
+          "priority": 3,
+          "due_at": "2024-05-16T00:00:00+00:00",
+          "completion": "2024-05-14T09:00:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 28,
+          "work_order_code": "WO-240513-0028",
+          "priority": 5,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-13T17:04:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 36,
+          "work_order_code": "WO-240513-0036",
+          "priority": 4,
+          "due_at": "2024-05-16T12:00:00+00:00",
+          "completion": "2024-05-14T06:35:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 40,
+          "work_order_code": "WO-240513-0040",
+          "priority": 5,
+          "due_at": "2024-05-17T08:00:00+00:00",
+          "completion": "2024-05-13T12:40:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 53,
+          "work_order_code": "WO-240513-0053",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-17T18:01:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 38,
+          "work_order_code": "WO-240513-0038",
+          "priority": 4,
+          "due_at": "2024-05-15T08:00:00+00:00",
+          "completion": "2024-05-13T20:19:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 21,
+          "work_order_code": "WO-240513-0021",
+          "priority": 2,
+          "due_at": "2024-05-17T12:00:00+00:00",
+          "completion": "2024-05-14T06:43:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 20,
+          "work_order_code": "WO-240513-0020",
+          "priority": 4,
+          "due_at": "2024-05-15T12:00:00+00:00",
+          "completion": "2024-05-14T06:35:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 54,
+          "work_order_code": "WO-240513-0054",
+          "priority": 4,
+          "due_at": "2024-05-17T08:00:00+00:00",
+          "completion": "2024-05-15T20:26:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 16,
+          "work_order_code": "WO-240513-0016",
+          "priority": 5,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-17T21:42:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 26,
+          "work_order_code": "WO-240513-0026",
+          "priority": 4,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-17T15:49:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 22,
+          "work_order_code": "WO-240513-0022",
+          "priority": 5,
+          "due_at": "2024-05-20T12:00:00+00:00",
+          "completion": "2024-05-13T20:22:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 55,
+          "work_order_code": "WO-240513-0055",
+          "priority": 3,
+          "due_at": "2024-05-15T12:00:00+00:00",
+          "completion": "2024-05-13T17:58:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 59,
+          "work_order_code": "WO-240513-0059",
+          "priority": 3,
+          "due_at": "2024-05-15T12:00:00+00:00",
+          "completion": "2024-05-17T12:20:00+00:00",
+          "tardiness_minutes": 2900.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 56,
+          "work_order_code": "WO-240513-0056",
+          "priority": 4,
+          "due_at": "2024-05-16T12:00:00+00:00",
+          "completion": "2024-05-14T14:51:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 6,
+          "work_order_code": "WO-240513-0006",
+          "priority": 4,
+          "due_at": "2024-05-16T12:00:00+00:00",
+          "completion": "2024-05-16T06:35:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 8,
+          "work_order_code": "WO-240513-0008",
+          "priority": 4,
+          "due_at": "2024-05-15T00:00:00+00:00",
+          "completion": "2024-05-15T18:45:00+00:00",
+          "tardiness_minutes": 1125.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 31,
+          "work_order_code": "WO-240513-0031",
+          "priority": 3,
+          "due_at": "2024-05-20T12:00:00+00:00",
+          "completion": "2024-05-16T16:40:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 37,
+          "work_order_code": "WO-240513-0037",
+          "priority": 3,
+          "due_at": "2024-05-16T00:00:00+00:00",
+          "completion": "2024-05-16T15:04:00+00:00",
+          "tardiness_minutes": 904.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 49,
+          "work_order_code": "WO-240513-0049",
+          "priority": 3,
+          "due_at": "2024-05-18T12:00:00+00:00",
+          "completion": "2024-05-16T13:28:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 19,
+          "work_order_code": "WO-240513-0019",
+          "priority": 3,
+          "due_at": "2024-05-22T08:00:00+00:00",
+          "completion": "2024-05-16T12:12:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 43,
+          "work_order_code": "WO-240513-0043",
+          "priority": 3,
+          "due_at": "2024-05-22T12:00:00+00:00",
+          "completion": "2024-05-16T18:20:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 7,
+          "work_order_code": "WO-240513-0007",
+          "priority": 3,
+          "due_at": "2024-05-22T12:00:00+00:00",
+          "completion": "2024-05-16T19:48:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 5,
+          "work_order_code": "WO-240513-0005",
+          "priority": 3,
+          "due_at": "2024-05-16T08:00:00+00:00",
+          "completion": "2024-05-17T14:49:00+00:00",
+          "tardiness_minutes": 1849.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 11,
+          "work_order_code": "WO-240513-0011",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-17T16:24:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 48,
+          "work_order_code": "WO-240513-0048",
+          "priority": 4,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-17T11:23:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 60,
+          "work_order_code": "WO-240513-0060",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-17T09:12:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 24,
+          "work_order_code": "WO-240513-0024",
+          "priority": 4,
+          "due_at": "2024-05-20T00:00:00+00:00",
+          "completion": "2024-05-17T14:08:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 42,
+          "work_order_code": "WO-240513-0042",
+          "priority": 4,
+          "due_at": "2024-05-24T12:00:00+00:00",
+          "completion": "2024-05-17T10:54:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 33,
+          "work_order_code": "WO-240513-0033",
+          "priority": 2,
+          "due_at": "2024-05-18T12:00:00+00:00",
+          "completion": "2024-05-17T19:39:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 2,
+          "work_order_code": "WO-240513-0002",
+          "priority": 4,
+          "due_at": "2024-05-22T00:00:00+00:00",
+          "completion": "2024-05-20T06:31:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 23,
+          "work_order_code": "WO-240513-0023",
+          "priority": 3,
+          "due_at": "2024-05-15T08:00:00+00:00",
+          "completion": "2024-05-17T17:21:00+00:00",
+          "tardiness_minutes": 3441.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 45,
+          "work_order_code": "WO-240513-0045",
+          "priority": 2,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-22T14:10:00+00:00",
+          "tardiness_minutes": 5170.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 3,
+          "work_order_code": "WO-240513-0003",
+          "priority": 2,
+          "due_at": "2024-05-19T00:00:00+00:00",
+          "completion": "2024-05-20T13:52:00+00:00",
+          "tardiness_minutes": 2272.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 44,
+          "work_order_code": "WO-240513-0044",
+          "priority": 4,
+          "due_at": "2024-05-24T00:00:00+00:00",
+          "completion": "2024-05-17T16:14:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 14,
+          "work_order_code": "WO-240513-0014",
+          "priority": 4,
+          "due_at": "2024-05-22T12:00:00+00:00",
+          "completion": "2024-05-20T09:46:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 39,
+          "work_order_code": "WO-240513-0039",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-17T20:52:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 32,
+          "work_order_code": "WO-240513-0032",
+          "priority": 5,
+          "due_at": "2024-05-19T12:00:00+00:00",
+          "completion": "2024-05-17T21:53:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": "2024-05-19T08:00:00+00:00"
+        },
+        {
+          "work_order_id": 41,
+          "work_order_code": "WO-240513-0041",
+          "priority": 3,
+          "due_at": "2024-05-16T08:00:00+00:00",
+          "completion": "2024-05-20T09:06:00+00:00",
+          "tardiness_minutes": 5826.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 12,
+          "work_order_code": "WO-240513-0012",
+          "priority": 4,
+          "due_at": "2024-05-24T00:00:00+00:00",
+          "completion": "2024-05-22T15:45:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 50,
+          "work_order_code": "WO-240513-0050",
+          "priority": 4,
+          "due_at": "2024-05-20T12:00:00+00:00",
+          "completion": "2024-05-20T11:02:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 35,
+          "work_order_code": "WO-240513-0035",
+          "priority": 3,
+          "due_at": "2024-05-16T00:00:00+00:00",
+          "completion": "2024-05-20T11:01:00+00:00",
+          "tardiness_minutes": 6421.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 9,
+          "work_order_code": "WO-240513-0009",
+          "priority": 2,
+          "due_at": "2024-05-15T08:00:00+00:00",
+          "completion": "2024-05-22T10:17:00+00:00",
+          "tardiness_minutes": 10217.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 17,
+          "work_order_code": "WO-240513-0017",
+          "priority": 3,
+          "due_at": "2024-05-24T08:00:00+00:00",
+          "completion": "2024-05-22T18:00:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 27,
+          "work_order_code": "WO-240513-0027",
+          "priority": 2,
+          "due_at": "2024-05-16T08:00:00+00:00",
+          "completion": "2024-05-22T15:25:00+00:00",
+          "tardiness_minutes": 9085.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 47,
+          "work_order_code": "WO-240513-0047",
+          "priority": 3,
+          "due_at": "2024-05-20T08:00:00+00:00",
+          "completion": "2024-05-22T10:53:00+00:00",
+          "tardiness_minutes": 3053.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 51,
+          "work_order_code": "WO-240513-0051",
+          "priority": 2,
+          "due_at": "2024-05-17T00:00:00+00:00",
+          "completion": "2024-05-22T13:36:00+00:00",
+          "tardiness_minutes": 8016.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 15,
+          "work_order_code": "WO-240513-0015",
+          "priority": 2,
+          "due_at": "2024-05-22T12:00:00+00:00",
+          "completion": "2024-05-22T19:56:00+00:00",
+          "tardiness_minutes": 476.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 29,
+          "work_order_code": "WO-240513-0029",
+          "priority": 3,
+          "due_at": "2024-05-17T00:00:00+00:00",
+          "completion": "2024-05-23T10:30:00+00:00",
+          "tardiness_minutes": 9270.0,
+          "is_late": true,
+          "hard_deadline": null
+        },
+        {
+          "work_order_id": 57,
+          "work_order_code": "WO-240513-0057",
+          "priority": 2,
+          "due_at": "2024-05-24T12:00:00+00:00",
+          "completion": "2024-05-22T16:36:00+00:00",
+          "tardiness_minutes": 0.0,
+          "is_late": false,
+          "hard_deadline": null
+        }
+      ],
+      "bottleneck_machine": {
+        "machine_id": 8,
+        "machine_code": "ASSY-01",
+        "machine_name": "Assembly Line A",
+        "machine_type": "ASSY",
+        "busy_minutes": 2385.0,
+        "setup_minutes": 270.0,
+        "available_minutes": 10440.0,
+        "utilisation_pct": 22.84,
+        "operations": 21
+      },
+      "solver_runtime_ms": 266443.4
+    }
+  },
+  "comparison": {
+    "rows": [
+      {
+        "metric": "on_time_delivery_pct",
+        "baseline": 71.67,
+        "optimised": 75.0,
+        "delta": 3.33,
+        "delta_pct": 4.65,
+        "direction": "up",
+        "verdict": "better"
+      },
+      {
+        "metric": "weighted_tardiness",
+        "baseline": 204342.0,
+        "optimised": 175964.0,
+        "delta": -28378.0,
+        "delta_pct": -13.89,
+        "direction": "down",
+        "verdict": "better"
+      },
+      {
+        "metric": "tardiness_minutes",
+        "baseline": 82450.0,
+        "optimised": 70025.0,
+        "delta": -12425.0,
+        "delta_pct": -15.07,
+        "direction": "down",
+        "verdict": "better"
+      },
+      {
+        "metric": "makespan_minutes",
+        "baseline": 13796.0,
+        "optimised": 14670.0,
+        "delta": 874.0,
+        "delta_pct": 6.34,
+        "direction": "down",
+        "verdict": "worse"
+      },
+      {
+        "metric": "setup_minutes",
+        "baseline": 1890.0,
+        "optimised": 2475.0,
+        "delta": 585.0,
+        "delta_pct": 30.95,
+        "direction": "down",
+        "verdict": "worse"
+      },
+      {
+        "metric": "overtime_minutes",
+        "baseline": 0.0,
+        "optimised": 0.0,
+        "delta": 0.0,
+        "delta_pct": null,
+        "direction": "down",
+        "verdict": "equal"
+      },
+      {
+        "metric": "machine_utilisation_pct",
+        "baseline": 8.53,
+        "optimised": 8.53,
+        "delta": 0.0,
+        "delta_pct": 0.0,
+        "direction": "up",
+        "verdict": "equal"
+      },
+      {
+        "metric": "operating_cost",
+        "baseline": 43277.97,
+        "optimised": 43271.13,
+        "delta": -6.84,
+        "delta_pct": -0.02,
+        "direction": "down",
+        "verdict": "better"
+      },
+      {
+        "metric": "schedule_disruption_pct",
+        "baseline": 0.0,
+        "optimised": 0.0,
+        "delta": 0.0,
+        "delta_pct": null,
+        "direction": "down",
+        "verdict": "equal"
+      },
+      {
+        "metric": "penalty_cost",
+        "baseline": 85142.5,
+        "optimised": 73318.33,
+        "delta": -11824.17,
+        "delta_pct": -13.89,
+        "direction": "down",
+        "verdict": "better"
+      }
+    ],
+    "improved_metrics": 5,
+    "regressed_metrics": 2,
+    "comparable": true,
+    "note": "Metrics are computed from the two validated schedules with identical definitions and denominators."
+  }
+}
